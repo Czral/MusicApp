@@ -64,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 song.stop();
-                song.reset();
-                song.start();
+
             }
         });
 
