@@ -60,10 +60,10 @@
             android:layout_weight="1" />
 
         <ImageView
+            android:id="@+id/stop"
             android:src="@drawable/stop"
             android:layout_width="40dp"
             android:layout_height="40dp"
-
             android:padding="6dp"
             android:layout_margin="4dp"
             android:layout_weight="1" />
@@ -79,6 +79,7 @@
 
 
         <ImageView
+            android:id="@+id/pause"
             android:src="@drawable/pause"
             android:layout_width="40dp"
             android:padding="6dp"
@@ -103,14 +104,46 @@
         android:textSize="32sp"
         android:text="NOW PLAYING:"/>
 
-
-
-    <ListView
-        android:id="@+id/list_songs"
+    <TextView
+        android:id="@+id/title_song"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
-    </ListView>
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:text="Title: " />
 
+    <TextView
+        android:id="@+id/album_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Album: " />
+
+    <TextView
+        android:id="@+id/artist_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:text="Artist: " />
+
+    <TextView
+        android:id="@+id/year_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Year: " />
+
+    <TextView
+        android:id="@+id/duration_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:text="Duration: " />
 
 </LinearLayout>
