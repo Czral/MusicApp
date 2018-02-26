@@ -39,12 +39,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 song.start();
-
-                if (song.isPlaying()) {
-
-                    song.start();
-                }
-
             }
         });
 
@@ -64,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 song.stop();
-
             }
         });
 
@@ -80,11 +73,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageView link = findViewById(R.id.buy);
+        link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent linkIntent = new Intent(MainActivity.this, MusicBuyingActivity.class);
+                startActivity(linkIntent);
+            }
+        });
+
+
         TextView titleSong = findViewById(R.id.title_song);
         titleSong.setText("Title: Master Of Puppets");
 
         TextView albumSong = findViewById(R.id.album_song);
         albumSong.setText("Album: Master Of Puppets");
+
+        TextView artistSong = findViewById(R.id.artist_song);
+        artistSong.setText("Artist: Metallica");
+
+        TextView yearSong = findViewById(R.id.year_song);
+        yearSong.setText("1986");
+
+        TextView numberSong = findViewById(R.id.number_song);
+        numberSong.setText("2");
+
 
     }
 

@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SongListActivity" />
-        <activity android:name=".PlaylistActivity"></activity>
+        <activity android:name=".PlaylistActivity" />
+        <activity android:name=".MusicBuyingActivity"></activity>
     </application>
 
 </manifest>

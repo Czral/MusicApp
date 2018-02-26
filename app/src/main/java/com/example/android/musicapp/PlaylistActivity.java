@@ -24,6 +24,10 @@ public class PlaylistActivity extends AppCompatActivity {
 
         songs.add(new Song("Wound Upon Wound", "Ad Majorem Sathanas Gloriam", "Gorgoroth", 2006, 1));
 
+        songs.add(new Song("Future World", "Keeper Of The Seven Keys I", "Helloween", 1987, 6));
+
+        songs.add(new Song("Beneath The Burial Surface", "Moon In The Scorpio", "Limbonic Art", 1996, 1));
+
 
         SongAdapter adapter = new SongAdapter(PlaylistActivity.this, songs);
 
