@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Music App</string>
+
+    <string name="now_playing">NOW PLAYING:</string>
+    <string name="title">Title: </string>
+    <string name="album">Album: </string>
+    <string name="artist">Artist: </string>
+    <string name="year">Year: </string>
+    <string name="track_number">Track Number: </string>
+
 </resources>

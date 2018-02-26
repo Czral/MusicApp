@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="Now playing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,8 +19,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".SongListActivity" />
-        <activity android:name=".PlaylistActivity" />
-        <activity android:name=".MusicBuyingActivity"></activity>
+        <activity
+            android:name=".PlaylistActivity"
+            android:label="Playlist" />
+        <activity
+            android:name=".MusicBuyingActivity"
+            android:label="Buy music online">
+
+        </activity>
+        <activity android:name=".FavoriteActivity"
+            android:label="Favorites">
+
+        </activity>
     </application>
 
 </manifest>
