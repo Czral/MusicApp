@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">Music App</string>
 
-    <string name="now_playing">NOW PLAYING:</string>
+    <string name="now_playing">Now playing:</string>
     <string name="title">Title: </string>
     <string name="album">Album: </string>
     <string name="artist">Artist: </string>
     <string name="year">Year: </string>
     <string name="track_number">Track Number: </string>
+    <string name="all_icons">All icons designed by "Pixel Perfect" from Flaticon.</string>
+    <string name="favorites">Favorites</string>
+    <string name="buy_music">Buy music online</string>
+    <string name="playlist">Playlist</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 
 </resources>

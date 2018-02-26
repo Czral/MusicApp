@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:background="@color/background"
-    android:orientation="vertical"
     tools:context="com.example.android.musicapp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
     <LinearLayout
@@ -16,16 +19,19 @@
         android:padding="@dimen/eight_dp">
 
         <ImageView
+            android:contentDescription="@string/buy_music"
             android:id="@+id/buy"
             style="@style/button_style"
             android:src="@drawable/treble" />
 
         <ImageView
+            android:contentDescription="@string/favorites"
             android:id="@+id/favorite"
             style="@style/button_style"
             android:src="@drawable/folder" />
 
         <ImageView
+            android:contentDescription="@string/playlist"
             android:id="@+id/playlist"
             style="@style/button_style"
             android:src="@drawable/playlist" />
@@ -46,15 +52,18 @@
 
 
         <ImageView
+            android:contentDescription="@string/previous"
             style="@style/button_style"
             android:src="@drawable/previous" />
 
         <ImageView
+            android:contentDescription="@string/stop"
             android:id="@+id/stop"
             style="@style/button_style"
             android:src="@drawable/stop" />
 
         <ImageView
+            android:contentDescription="@string/play"
             android:id="@+id/play"
             android:layout_width="@dimen/sixty_dp"
             android:layout_height="@dimen/sixty_dp"
@@ -65,11 +74,13 @@
 
 
         <ImageView
+            android:contentDescription="@string/pause"
             android:id="@+id/pause"
             style="@style/button_style"
             android:src="@drawable/pause" />
 
         <ImageView
+            android:contentDescription="@string/next"
             style="@style/button_style"
             android:src="@drawable/next" />
 
@@ -85,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="@dimen/sixteen_dp"
+        android:textAllCaps="true"
         android:text="@string/now_playing"
         android:textColor="@color/black"
         android:textSize="@dimen/thirty_two_sp"
@@ -101,9 +113,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="@dimen/sixteen_dp"
-        android:text=""
-        android:textSize="@dimen/sixteen_sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp" />
 
     <TextView
         android:id="@+id/album_song"
@@ -112,9 +123,8 @@
         android:layout_gravity="center"
         android:paddingEnd="@dimen/sixteen_dp"
         android:paddingStart="@dimen/sixteen_dp"
-        android:text=""
-        android:textSize="@dimen/sixteen_sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp" />
 
     <TextView
         android:id="@+id/artist_song"
@@ -122,9 +132,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="@dimen/sixteen_dp"
-        android:text=""
-        android:textSize="@dimen/sixteen_sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp" />
 
     <TextView
         android:id="@+id/year_song"
@@ -133,9 +142,8 @@
         android:layout_gravity="center"
         android:paddingEnd="@dimen/sixteen_dp"
         android:paddingStart="16dp"
-        android:text=""
-        android:textSize="@dimen/sixteen_sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp" />
 
     <TextView
         android:id="@+id/number_song"
@@ -143,8 +151,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="@dimen/sixteen_dp"
-        android:text=""
-        android:textSize="@dimen/sixteen_sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/four_dp"
+        android:text="@string/all_icons"
+        android:textSize="@dimen/eight_sp" />
 
 </LinearLayout>
+
+</ScrollView>
