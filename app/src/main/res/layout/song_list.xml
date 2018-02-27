@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:id="@+id/song_details"
     android:padding="@dimen/sixteen_dp"
-    tools:context="com.example.android.musicapp.SongListActivity">
+    tools:context="com.example.android.musicapp.PlaylistActivity">
 
     <TextView
         android:id="@+id/title_song"

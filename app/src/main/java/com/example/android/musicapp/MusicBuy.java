@@ -6,20 +6,20 @@ package com.example.android.musicapp;
 
 public class MusicBuy {
 
-    private String mGetMusicSite;
-    private String mGetMusicLink;
+    private String mMusicSite;
+    private String mMusicLink;
 
     public MusicBuy(String getMusicSite, String getMusicLink) {
 
-        mGetMusicSite = getMusicSite;
-        mGetMusicLink = getMusicLink;
+        mMusicSite = getMusicSite;
+        mMusicLink = getMusicLink;
     }
 
     public String getMusicSite() {
-        return mGetMusicSite;
+        return mMusicSite;
     }
 
     public String getMusicLink() {
-        return mGetMusicLink;
+        return mMusicLink;
     }
 }

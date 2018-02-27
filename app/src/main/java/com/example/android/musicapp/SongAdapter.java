@@ -35,20 +35,20 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         Song nowPlayingSong = getItem(position);
 
-        TextView songTitle = (TextView) listItemView.findViewById(R.id.title_song);
-        songTitle.setText(getContext().getString(R.string.title) + " " + nowPlayingSong.getSongTitle());
+        TextView songTitleTextView = (TextView) listItemView.findViewById(R.id.title_song);
+        songTitleTextView.setText(getContext().getString(R.string.title) + " " + nowPlayingSong.getSongTitle());
 
-        TextView songAlbum = (TextView) listItemView.findViewById(R.id.album_song);
-        songAlbum.setText(getContext().getString(R.string.album) + " " + nowPlayingSong.getSongAlbum());
+        TextView songAlbumTextView = (TextView) listItemView.findViewById(R.id.album_song);
+        songAlbumTextView.setText(getContext().getString(R.string.album) + " " + nowPlayingSong.getSongAlbum());
 
-        TextView songArtist = (TextView) listItemView.findViewById(R.id.artist_song);
-        songArtist.setText(getContext().getString(R.string.artist) + " " + nowPlayingSong.getSongArtist());
+        TextView songArtistTextView = (TextView) listItemView.findViewById(R.id.artist_song);
+        songArtistTextView.setText(getContext().getString(R.string.artist) + " " + nowPlayingSong.getSongArtist());
 
-        TextView songYear = (TextView) listItemView.findViewById(R.id.year_song);
-        songYear.setText(getContext().getString(R.string.year) + " " + nowPlayingSong.getSongYear());
+        TextView songYearTextView = (TextView) listItemView.findViewById(R.id.year_song);
+        songYearTextView.setText(getContext().getString(R.string.year) + " " + nowPlayingSong.getSongYear());
 
-        TextView songDuration = (TextView) listItemView.findViewById(R.id.duration_song);
-        songDuration.setText(getContext().getString(R.string.track_number) + " " + String.valueOf(nowPlayingSong.getSongNumber()));
+        TextView songNumberTextView = (TextView) listItemView.findViewById(R.id.duration_song);
+        songNumberTextView.setText(getContext().getString(R.string.track_number) + " " + String.valueOf(nowPlayingSong.getSongNumber()));
 
         return listItemView;
 
