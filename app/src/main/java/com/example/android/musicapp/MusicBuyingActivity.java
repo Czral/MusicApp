@@ -51,7 +51,7 @@ public class MusicBuyingActivity extends AppCompatActivity {
 
             }
         });
-
+        // Opens Now Playing Screen.
         ImageView play = findViewById(R.id.play);
         play.setOnClickListener(new View.OnClickListener() {
             @Override
