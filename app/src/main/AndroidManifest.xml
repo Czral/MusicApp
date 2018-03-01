@@ -10,8 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="Now playing">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,10 +22,9 @@
             android:label="Playlist" />
         <activity
             android:name=".MusicBuyingActivity"
-            android:label="Buy music online">
-
-        </activity>
-        <activity android:name=".FavoriteActivity"
+            android:label="Buy music online"/>
+        <activity
+            android:name=".FavoriteActivity"
             android:label="Favorites">
 
         </activity>

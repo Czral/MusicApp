@@ -1,7 +1,10 @@
 package com.example.android.musicapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -34,7 +37,36 @@ public class PlaylistActivity extends AppCompatActivity {
 
         songList.setAdapter(adapter);
 
+        ImageView play = findViewById(R.id.play);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent playIntent = new Intent(PlaylistActivity.this, MainActivity.class);
+                startActivity(playIntent);
+
+            }
+        });
+
+        ImageView buy = findViewById(R.id.buy);
+        buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent buyIntent = new Intent(PlaylistActivity.this, MusicBuyingActivity.class);
+                startActivity(buyIntent);
+            }
+        });
+
+        ImageView favorite = findViewById(R.id.favorite);
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent favoriteIntent = new Intent(PlaylistActivity.this, FavoriteActivity.class);
+                startActivity(favoriteIntent);
+            }
+        });
 
 
     }

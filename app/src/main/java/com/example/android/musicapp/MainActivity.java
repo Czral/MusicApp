@@ -1,30 +1,19 @@
 package com.example.android.musicapp;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.media.MediaMetadata;
-import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
-import android.media.MediaScannerConnection;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.File;
-import java.net.URI;
-import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-//Sets Media player.
-    MediaPlayer song;
+    //Sets Media player.
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Media player initialiazing song.
-        song = MediaPlayer.create(MainActivity.this, R.raw.master_of_puppets);
+        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.master_of_puppets);
 
         // Play button
         ImageView play = findViewById(R.id.play);
@@ -41,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // Start song.
-                song.start();
+                mediaPlayer.start();
+
             }
         });
 
@@ -52,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // Pause song.
-                song.pause();
+                mediaPlayer.pause();
             }
         });
 
@@ -63,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // Stop song.
-                song.stop();
+                mediaPlayer.stop();
             }
         });
 
@@ -107,27 +97,30 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Title text setting.
+        String titleText = String.format(Locale.US, getString(R.string.title), "Master Of Puppets");
         TextView titleSong = findViewById(R.id.title_song);
-        titleSong.setText(getString(R.string.title) + " " + "Master Of Puppets");
+        titleSong.setText(titleText);
 
         // Album text setting.
+        String albumText = String.format(Locale.US, getString(R.string.album), "Master Of Puppets");
         TextView albumSong = findViewById(R.id.album_song);
-        albumSong.setText(getString(R.string.album) + " " + "Master Of Puppets");
+        albumSong.setText(albumText);
 
         // Artist text setting.
+        String artistText = String.format(Locale.US, getString(R.string.year), "Metallica");
         TextView artistSong = findViewById(R.id.artist_song);
-        artistSong.setText(getString(R.string.artist) + " " + "Metallica");
+        artistSong.setText(artistText);
 
         // Year text setting.
+        String yearText = String.format(Locale.US, getString(R.string.year), "1986");
         TextView yearSong = findViewById(R.id.year_song);
-        yearSong.setText(getString(R.string.year) + " " + "1986");
+        yearSong.setText(yearText);
 
         // Number track setting.
+        String numberText = String.format(Locale.US, getString(R.string.track_number), "2");
         TextView numberSong = findViewById(R.id.number_song);
-        numberSong.setText(getString(R.string.track_number) + " " + "2");
-
+        numberSong.setText(numberText);
 
     }
-
 
 }

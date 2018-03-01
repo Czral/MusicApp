@@ -6,39 +6,38 @@ package com.example.android.musicapp;
 
 public class Song {
 
-    private String mGetSongTitle;
-    private String mGetSongAlbum;
-    private String mGetSongArtist;
-    private int mGetSongYear;
-    private int mGetSongNumber;
+    private String mSongTitle;
+    private String mSongAlbum;
+    private String mSongArtist;
+    private int mSongYear;
+    private int mSongNumber;
 
     public Song(String songTitle, String songAlbum, String songArtist, int songYear, int songNumber) {
 
-        mGetSongTitle = songTitle;
-        mGetSongAlbum = songAlbum;
-        mGetSongArtist = songArtist;
-        mGetSongYear = songYear;
-        mGetSongNumber = songNumber;
+        mSongTitle = songTitle;
+        mSongAlbum = songAlbum;
+        mSongArtist = songArtist;
+        mSongYear = songYear;
+        mSongNumber = songNumber;
 
     }
 
     public String getSongTitle() {
-        return mGetSongTitle;
+        return mSongTitle;
     }
 
     public String getSongAlbum() {
-        return mGetSongAlbum;
+        return mSongAlbum;
     }
 
-    public String getSongArtist() { return mGetSongArtist; }
+    public String getSongArtist() { return mSongArtist; }
 
     public int getSongYear() {
-        return mGetSongYear;
+        return mSongYear;
     }
 
     public int getSongNumber() {
-        return mGetSongNumber;
+        return mSongNumber;
     }
-
 
 }

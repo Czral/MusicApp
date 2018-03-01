@@ -2,17 +2,18 @@ package com.example.android.musicapp;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class MusicBuyingActivity extends AppCompatActivity {
 
-// Arraylist naming.
+    // Arraylist naming.
     ArrayList<MusicBuy> musicLink;
 
     @Override
@@ -43,51 +44,44 @@ public class MusicBuyingActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 // Opens links from the ArrayList.
-                if (i == 0) {
-                    Intent openLink = new Intent(Intent.ACTION_VIEW);
-                    openLink.setData(Uri.parse("http://www.amazon.com/MP3-Music-Download/b/ref=sa_menu_dmusic2?ie=UTF8&node=163856011"));
-                    startActivity(openLink);
-                }
+                MusicBuy link = musicLink.get(i);
+                Intent openLink = new Intent(Intent.ACTION_VIEW);
+                openLink.setData(Uri.parse(link.getMusicLink()));
+                startActivity(openLink);
 
-                if (i == 1) {
-                    Intent openLink = new Intent(Intent.ACTION_VIEW);
-                    openLink.setData(Uri.parse("http://www.emusic.com/"));
-                    startActivity(openLink);
-
-                }
-
-                if (i == 2) {
-                    Intent openLink = new Intent(Intent.ACTION_VIEW);
-                    openLink.setData(Uri.parse("http://bleep.com/"));
-                    startActivity(openLink);
-                }
-
-                if (i == 3) {
-                    Intent openLink = new Intent(Intent.ACTION_VIEW);
-                    openLink.setData(Uri.parse("http://boomkat.com/"));
-                    startActivity(openLink);
-
-                }
-
-                if (i == 4) {
-                    Intent openLink = new Intent(Intent.ACTION_VIEW);
-                    openLink.setData(Uri.parse("http://gr.napster.com/"));
-                    startActivity(openLink);
-                }
-
-                if (i == 5) {
-                    Intent openLink = new Intent(Intent.ACTION_VIEW);
-                    openLink.setData(Uri.parse("http://www.trackitdown.net/"));
-                    startActivity(openLink);
-
-                }
             }
         });
 
+        ImageView play = findViewById(R.id.play);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent playIntent = new Intent(MusicBuyingActivity.this, MainActivity.class);
+                startActivity(playIntent);
+            }
+        });
 
+        ImageView favorite = findViewById(R.id.favorite);
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent favoriteIntent = new Intent(MusicBuyingActivity.this, FavoriteActivity.class);
+                startActivity(favoriteIntent);
+            }
+        });
 
-}
+        ImageView playlist = findViewById(R.id.playlist);
+        playlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent playlistIntent = new Intent(MusicBuyingActivity.this, PlaylistActivity.class);
+                startActivity(playlistIntent);
+            }
+        });
+
+    }
 
 }
