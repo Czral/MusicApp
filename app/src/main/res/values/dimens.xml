@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    // Dimensions in dp.
     <dimen name="eight_dp">8dp</dimen>
     <dimen name="forty_dp">40dp</dimen>
     <dimen name="six_dp">6dp</dimen>
@@ -9,12 +10,9 @@
     <dimen name="sixteen_dp">16dp</dimen>
     <dimen name="one_dp">1dp</dimen>
 
+    // Dimension in sp.
     <dimen name="sixteen_sp">16sp</dimen>
     <dimen name="thirty_two_sp">32sp</dimen>
     <dimen name="eight_sp">8sp</dimen>
-
-
-
-
 
 </resources>

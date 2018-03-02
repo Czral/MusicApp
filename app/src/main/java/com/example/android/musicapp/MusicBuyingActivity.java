@@ -23,22 +23,24 @@ public class MusicBuyingActivity extends AppCompatActivity {
 
         musicLink = new ArrayList<>();
 
-        //Arraylist setting items.
-        musicLink.add(new MusicBuy("AMAZON", "http://www.amazon.com/MP3-Music-Download/b/ref=sa_menu_dmusic2?ie=UTF8&node=163856011"));
-        musicLink.add(new MusicBuy("eMUSIC", "http://www.emusic.com/"));
-        musicLink.add(new MusicBuy("BLEEP", "http://bleep.com/"));
-        musicLink.add(new MusicBuy("BOOMKAT", "http://boomkat.com/"));
-        musicLink.add(new MusicBuy("NAPSTER", "http://gr.napster.com/"));
-        musicLink.add(new MusicBuy("TRACK IT DOWN", "http://www.trackitdown.net/"));
+        //Music Buying Arraylist setting items.
+        musicLink.add(new MusicBuy(getString(R.string.amazon), getString(R.string.amazon_link)));
+        musicLink.add(new MusicBuy(getString(R.string.emusic), getString(R.string.emusic_link)));
+        musicLink.add(new MusicBuy(getString(R.string.bleep), getString(R.string.bleep_link)));
+        musicLink.add(new MusicBuy(getString(R.string.boomkat), getString(R.string.boomkat_link)));
+        musicLink.add(new MusicBuy(getString(R.string.napster), getString(R.string.napster_link)));
+        musicLink.add(new MusicBuy(getString(R.string.track_it_down), getString(R.string.track_it_down_link)));
 
-        //Adapter setting.
+        // Custom Adapter definition.
         MusicBuyAdapter adapterMusic = new MusicBuyAdapter(MusicBuyingActivity.this, musicLink);
 
+        // ListView definition.
         final ListView musicLinkList = findViewById(R.id.music_list_activity);
 
+        // ListView setting Adapter.
         musicLinkList.setAdapter(adapterMusic);
 
-        // On Item Click setting.
+        // On ItemClick setting (Opens link).
         musicLinkList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -51,7 +53,7 @@ public class MusicBuyingActivity extends AppCompatActivity {
 
             }
         });
-        // Opens Now Playing Screen.
+        // Opens Now Playing screen.
         ImageView play = findViewById(R.id.play);
         play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +64,7 @@ public class MusicBuyingActivity extends AppCompatActivity {
             }
         });
 
+        // Opens Favorites screen
         ImageView favorite = findViewById(R.id.favorite);
         favorite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +75,7 @@ public class MusicBuyingActivity extends AppCompatActivity {
             }
         });
 
+        // Opens Playlist screen.
         ImageView playlist = findViewById(R.id.playlist);
         playlist.setOnClickListener(new View.OnClickListener() {
             @Override

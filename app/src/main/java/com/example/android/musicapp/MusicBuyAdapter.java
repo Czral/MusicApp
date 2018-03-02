@@ -34,7 +34,7 @@ public class MusicBuyAdapter extends ArrayAdapter<MusicBuy> {
             MusicBuy currentMusicBuy = getItem(position);
 
             TextView siteText = musicListView.findViewById(R.id.site);
-            siteText.setText(currentMusicBuy.getMusicSite());
+            siteText.setText(currentMusicBuy.getMusicSite().toUpperCase());
 
         }
         return musicListView;

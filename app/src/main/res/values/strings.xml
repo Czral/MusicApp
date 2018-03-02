@@ -17,6 +17,52 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="titleText"></string>
+    // Music Buying Arraylist Item 1.
+    <string name="amazon">amazon</string>
+    <string name="amazon_link">http://www.amazon.com/</string>
+
+    // Music Buying Arraylist Item 2.
+    <string name="emusic">e-music</string>
+    <string name="emusic_link">http://www.emusic.com/</string>
+
+    // Music Buying Arraylist Item 3.
+    <string name="boomkat">boomkat</string>
+    <string name="boomkat_link">http://boomkat.com/</string>
+
+    // Music Buying Arraylist Item 4.
+    <string name="bleep">bleep</string>
+    <string name="bleep_link">http://bleep.com/</string>
+
+    // Music Buying Arraylist Item 5.
+    <string name="napster">napster</string>
+    <string name="napster_link">http://gr.napster.com/</string>
+
+    // Music Buying Arraylist Item 6.
+    <string name="track_it_down">track it down</string>
+    <string name="track_it_down_link">http://www.trackitdown.net/</string>
+
+    // Playlist Arraylist Item 1.
+    <string name="master_of_puppets">Master Of Puppets</string>
+    <string name="metallica">Metallica</string>
+
+    // Playlist Arraylist Item 2 (VI should be capital, roman number).
+    <string name="exercises_in_futility_vi">Exercises In Futility VI</string>
+    <string name="exercises_in_futility">Exercises In Futility</string>
+    <string name="mgla">Mgla</string>
+
+    // Playlist Arraylist Item 3.
+    <string name="wound_upon_wound">Wound Upon Wound</string>
+    <string name="ad_majorem_sathanas_gloriam">Ad Majorem Sathanas Gloriam</string>
+    <string name="gorgoroth">Gorgoroth</string>
+
+    // Playlist Arraylist Item 4 (I should be capital, roman number).
+    <string name="future_world">Future World</string>
+    <string name="keeper_of_the_seven_keys_i">Keeper Of The Seven Keys I</string>
+    <string name="helloween">Helloween</string>
+
+    // Playlist Arraylist Item 5.
+    <string name="beneath_the_burial_surface">Beneath The Burial Surface</string>
+    <string name="moon_in_scorpio">Moon In Scorpio</string>
+    <string name="limbonic_art">Limbonic Art</string>
 
 </resources>

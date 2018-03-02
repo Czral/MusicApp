@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class PlaylistActivity extends AppCompatActivity {
 
+    // ArrayList naming.
     ArrayList<Song> songs;
 
     @Override
@@ -20,23 +21,23 @@ public class PlaylistActivity extends AppCompatActivity {
 
         songs = new ArrayList<>();
 
-        songs.add(new Song("Master Of Puppets", "Master Of Puppets", "Metallica", 1986, 2));
+        // Playlist Arraylist setting items.
+        songs.add(new Song(getString(R.string.master_of_puppets), getString(R.string.master_of_puppets), getString(R.string.metallica), 1986, 2));
+        songs.add(new Song(getString(R.string.exercises_in_futility_vi), getString(R.string.exercises_in_futility), getString(R.string.mgla), 2015, 6));
+        songs.add(new Song(getString(R.string.wound_upon_wound), getString(R.string.ad_majorem_sathanas_gloriam), getString(R.string.gorgoroth), 2006, 1));
+        songs.add(new Song(getString(R.string.future_world), getString(R.string.keeper_of_the_seven_keys_i), getString(R.string.helloween), 1987, 6));
+        songs.add(new Song(getString(R.string.beneath_the_burial_surface), getString(R.string.moon_in_scorpio), getString(R.string.limbonic_art), 1996, 1));
 
-        songs.add(new Song("Exercises In Futility VI", "Exercises In Futility", "Mgla", 2015, 6));
-
-        songs.add(new Song("Wound Upon Wound", "Ad Majorem Sathanas Gloriam", "Gorgoroth", 2006, 1));
-
-        songs.add(new Song("Future World", "Keeper Of The Seven Keys I", "Helloween", 1987, 6));
-
-        songs.add(new Song("Beneath The Burial Surface", "Moon In The Scorpio", "Limbonic Art", 1996, 1));
-
-
+        // Custom Adapter definition.
         SongAdapter adapter = new SongAdapter(PlaylistActivity.this, songs);
 
+        // ListView definition.
         ListView songList = (ListView) findViewById(R.id.list_song);
 
+        // ListView setting Adapter.
         songList.setAdapter(adapter);
 
+        // Opens Now Playing screen.
         ImageView play = findViewById(R.id.play);
         play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +49,7 @@ public class PlaylistActivity extends AppCompatActivity {
             }
         });
 
+        // Opens Music Buying screen.
         ImageView buy = findViewById(R.id.buy);
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,7 @@ public class PlaylistActivity extends AppCompatActivity {
             }
         });
 
+        // Opens Favorites screen.
         ImageView favorite = findViewById(R.id.favorite);
         favorite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +70,6 @@ public class PlaylistActivity extends AppCompatActivity {
                 startActivity(favoriteIntent);
             }
         });
-
 
     }
 }

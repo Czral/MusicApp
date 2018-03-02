@@ -4,9 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    // Background color.
     <color name="background">#F5F5F5</color>
-    <color name="green_line">#4CAF50</color>
-    <color name="black">#000000</color>
 
+    // Line color.
+    <color name="green_line">#4CAF50</color>
+
+    // Black color (Button color).
+    <color name="black">#000000</color>
 
 </resources>

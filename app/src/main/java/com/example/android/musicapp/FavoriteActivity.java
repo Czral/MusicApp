@@ -13,6 +13,7 @@ public class FavoriteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playlist);
 
+        // Opens Now Playing screen.
         ImageView play = findViewById(R.id.favorite);
         play.setImageResource(R.drawable.play);
         play.setOnClickListener(new View.OnClickListener() {
@@ -24,6 +25,7 @@ public class FavoriteActivity extends AppCompatActivity {
             }
         });
 
+        // Opens Playlist screen.
         ImageView playlist = findViewById(R.id.play);
         playlist.setImageResource(R.drawable.playlist);
         playlist.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +37,7 @@ public class FavoriteActivity extends AppCompatActivity {
             }
         });
 
+        // Opens Music Buying screen.
         ImageView buy = findViewById(R.id.buy);
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
