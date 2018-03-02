@@ -16,15 +16,12 @@ import java.util.Locale;
 
 public class SongAdapter extends ArrayAdapter<Song> {
 
-
     public SongAdapter(Context context, ArrayList<Song> songs) {
         super(context, 0, songs);
     }
 
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
 
         View listItemView = convertView;
         if (listItemView == null) {

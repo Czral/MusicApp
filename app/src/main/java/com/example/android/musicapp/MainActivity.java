@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         // Title text setting.
         String titleText = String.format(Locale.US, getString(R.string.title), "Master Of Puppets");
         TextView titleSong = findViewById(R.id.title_song);

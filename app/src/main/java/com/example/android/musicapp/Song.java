@@ -30,7 +30,9 @@ public class Song {
         return mSongAlbum;
     }
 
-    public String getSongArtist() { return mSongArtist; }
+    public String getSongArtist() {
+        return mSongArtist;
+    }
 
     public int getSongYear() {
         return mSongYear;

@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/song_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/song_details"
     android:padding="@dimen/sixteen_dp"
     tools:context="com.example.android.musicapp.PlaylistActivity">
 
@@ -13,40 +13,40 @@
         android:id="@+id/title_song"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/sixteen_sp"
         android:paddingBottom="@dimen/four_dp"
-        android:text="Title: " />
+        android:text="Title: "
+        android:textSize="@dimen/sixteen_sp" />
 
     <TextView
         android:id="@+id/album_song"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/sixteen_sp"
         android:paddingBottom="@dimen/four_dp"
-        android:text="Album: " />
+        android:text="Album: "
+        android:textSize="@dimen/sixteen_sp" />
 
     <TextView
         android:id="@+id/artist_song"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/sixteen_sp"
         android:paddingBottom="@dimen/four_dp"
-        android:text="Artist: " />
+        android:text="Artist: "
+        android:textSize="@dimen/sixteen_sp" />
 
     <TextView
         android:id="@+id/year_song"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/sixteen_sp"
         android:paddingBottom="@dimen/four_dp"
-        android:text="Year: " />
+        android:text="Year: "
+        android:textSize="@dimen/sixteen_sp" />
 
     <TextView
         android:id="@+id/duration_song"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/sixteen_sp"
         android:paddingBottom="@dimen/four_dp"
-        android:text="Duration: " />
+        android:text="Duration: "
+        android:textSize="@dimen/sixteen_sp" />
 
 </LinearLayout>
