@@ -5,8 +5,8 @@
     <string name="title">Title: %s</string>
     <string name="album">Album: %s</string>
     <string name="artist">Artist: %s</string>
-    <string name="year">Year: %s</string>
-    <string name="track_number">Track Number: %s</string>
+    <string name="year">Year: %d</string>
+    <string name="track_number">Track Number: %d</string>
     <string name="all_icons">All icons designed by "Pixel Perfect" from Flaticon.</string>
     <string name="favorites">Favorites</string>
     <string name="buy_music">Buy music online</string>

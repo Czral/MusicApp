@@ -1,11 +1,12 @@
 package com.example.android.musicapp;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -14,44 +15,102 @@ import java.util.Locale;
  * Created by XXX on 23-Feb-18.
  */
 
-public class SongAdapter extends ArrayAdapter<Song> {
+public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder> {
 
-    public SongAdapter(Context context, ArrayList<Song> songs) {
-        super(context, 0, songs);
-    }
+    private static ArrayList<Song> songs;
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    /**
+     * Provide a reference to the type of views that you are using
+     * (custom ViewHolder).
+     */
+    public static class SongViewHolder extends RecyclerView.ViewHolder {
 
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.song_list, parent, false);
+        private final TextView titleTextView;
+        private final TextView albumTextView;
+        private final TextView artistTextView;
+        private final TextView yearTextView;
+        private final TextView durationTextView;
+
+        public SongViewHolder(View view) {
+            super(view);
+
+            titleTextView = view.findViewById(R.id.title_song);
+            albumTextView = view.findViewById(R.id.album_song);
+            artistTextView = view.findViewById(R.id.artist_song);
+            yearTextView = view.findViewById(R.id.year_song);
+            durationTextView = view.findViewById(R.id.duration_song);
         }
 
-        Song nowPlayingSong = getItem(position);
+        public TextView getTitleTextView() {
+            return titleTextView;
+        }
 
-        String songTitle = String.format(Locale.US, getContext().getString(R.string.title), nowPlayingSong.getSongTitle());
-        TextView songTitleTextView = (TextView) listItemView.findViewById(R.id.title_song);
-        songTitleTextView.setText(songTitle);
+        public TextView getAlbumTextView() {
+            return albumTextView;
+        }
 
-        String songAlbum = String.format(Locale.US, getContext().getString(R.string.album), nowPlayingSong.getSongAlbum());
-        TextView songAlbumTextView = (TextView) listItemView.findViewById(R.id.album_song);
-        songAlbumTextView.setText(songAlbum);
+        public TextView getArtistTextView() {
+            return artistTextView;
+        }
 
-        String songArtist = String.format(Locale.US, getContext().getString(R.string.artist), nowPlayingSong.getSongArtist());
-        TextView songArtistTextView = (TextView) listItemView.findViewById(R.id.artist_song);
-        songArtistTextView.setText(songArtist);
+        public TextView getYearTextView() {
+            return yearTextView;
+        }
 
-        String songYear = String.format(Locale.US, getContext().getString(R.string.year), String.valueOf(nowPlayingSong.getSongYear()));
-        TextView songYearTextView = (TextView) listItemView.findViewById(R.id.year_song);
-        songYearTextView.setText(songYear);
+        public TextView getDurationTextView() {
+            return durationTextView;
+        }
+    }
 
-        String songNumber = String.format(Locale.US, getContext().getString(R.string.track_number), String.valueOf(nowPlayingSong.getSongNumber()));
-        TextView songNumberTextView = (TextView) listItemView.findViewById(R.id.duration_song);
-        songNumberTextView.setText(songNumber);
+    public SongAdapter(ArrayList<Song> songArrayList) {
+        songs = songArrayList;
+    }
 
-        return listItemView;
+    // Create new views (invoked by the layout manager)
+    @NonNull
+    @Override
+    public SongViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        // Create a new view, which defines the UI of the list item
+        View view = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.song_list, viewGroup, false);
+
+        return new SongViewHolder(view);
+    }
+
+    // Replace the contents of a view (invoked by the layout manager)
+    @Override
+    public void onBindViewHolder(SongViewHolder viewHolder, final int position) {
+
+        // Get element from your dataset at this position and replace the
+        // contents of the view with that element
+        Song song = songs.get(position);
+
+        viewHolder.getTitleTextView().setText(String.format(Locale.US, viewHolder.itemView.getContext().getString(R.string.title),
+                song.getSongTitle()));
+
+        viewHolder.getAlbumTextView().setText(String.format(Locale.US, viewHolder.itemView.getContext().getString(R.string.album),
+                song.getSongAlbum()));
+
+        viewHolder.getArtistTextView().setText(String.format(Locale.US, viewHolder.itemView.getContext().getString(R.string.artist),
+                song.getSongArtist()));
+
+        viewHolder.getYearTextView().setText(String.format(Locale.US, viewHolder.itemView.getContext().getString(R.string.year),
+                song.getSongYear()));
+
+        viewHolder.getDurationTextView().setText(String.format(Locale.US, viewHolder.itemView.getContext().getString(R.string.track_number),
+                song.getSongNumber()));
 
     }
+
+    // Return the size of your dataset (invoked by the layout manager)
+    @Override
+    public int getItemCount() {
+
+        if (songs != null) {
+
+            return songs.size();
+        }
+        return 0;
+    }
+
 }

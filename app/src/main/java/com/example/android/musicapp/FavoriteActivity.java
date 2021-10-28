@@ -1,72 +1,55 @@
 package com.example.android.musicapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.example.android.musicapp.databinding.ActivityPlaylistBinding;
 
 import java.util.ArrayList;
 
 public class FavoriteActivity extends AppCompatActivity {
 
-    //Arraylist naming.
-    ArrayList<Song> favorite;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_playlist);
 
-        favorite = new ArrayList<>();
+        ActivityPlaylistBinding binding = ActivityPlaylistBinding.inflate(getLayoutInflater());
+        View root = binding.getRoot();
+        setContentView(root);
+
+        ArrayList<Song> favorite = new ArrayList<>();
 
         // Arraylist setting items.
         favorite.add(new Song(getString(R.string.exercises_in_futility_vi), getString(R.string.exercises_in_futility), getString(R.string.mgla), 2015, 6));
         favorite.add(new Song(getString(R.string.beneath_the_burial_surface), getString(R.string.moon_in_scorpio), getString(R.string.limbonic_art), 1996, 1));
 
-        // Custom Adapter setting.
-        SongAdapter adapter = new SongAdapter(this, favorite);
+        SongAdapter adapter = new SongAdapter(favorite);
 
-        // ListView definition.
-        ListView favoriteList = findViewById(R.id.list_song);
+        binding.listSong.setLayoutManager(new LinearLayoutManager(this));
+        binding.listSong.setAdapter(adapter);
 
-        // ListView setting Adapter.
-        favoriteList.setAdapter(adapter);
+        binding.play.setImageResource(R.drawable.play);
+        binding.play.setOnClickListener(view -> {
 
-        // Opens Now Playing screen.
-        ImageView play = findViewById(R.id.favorite);
-        play.setImageResource(R.drawable.play);
-        play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent playIntent = new Intent(FavoriteActivity.this, MainActivity.class);
-                startActivity(playIntent);
-            }
+            Intent playIntent = new Intent(FavoriteActivity.this, MainActivity.class);
+            startActivity(playIntent);
         });
 
-        // Opens Playlist screen.
-        ImageView playlist = findViewById(R.id.play);
-        playlist.setImageResource(R.drawable.playlist);
-        playlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        binding.favorite.setImageResource(R.drawable.playlist);
+        binding.favorite.setOnClickListener(view -> {
 
-                Intent playlistIntent = new Intent(FavoriteActivity.this, PlaylistActivity.class);
-                startActivity(playlistIntent);
-            }
+            Intent playlistIntent = new Intent(FavoriteActivity.this, PlaylistActivity.class);
+            startActivity(playlistIntent);
         });
 
-        // Opens Music Buying screen.
-        ImageView buy = findViewById(R.id.buy);
-        buy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        binding.buy.setOnClickListener(view -> {
 
-                Intent buyIntent = new Intent(FavoriteActivity.this, MusicBuyingActivity.class);
-                startActivity(buyIntent);
-            }
+            Intent buyIntent = new Intent(FavoriteActivity.this, MusicBuyingActivity.class);
+            startActivity(buyIntent);
         });
 
     }
