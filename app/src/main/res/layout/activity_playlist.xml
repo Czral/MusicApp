@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.musicapp.PlaylistActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="com.example.android.musicapp.PlaylistActivity">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/eight_dp">
 
-            <ImageView
-                android:id="@+id/buy"
-                style="@style/button_style"
-                android:contentDescription="@string/buy_music"
-                android:src="@drawable/treble" />
+        <ImageView
+            android:id="@+id/buy"
+            style="@style/button_style"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/buy_music"
+            android:src="@drawable/treble"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/favorite"
-                style="@style/button_style"
-                android:contentDescription="@string/favorites"
-                android:src="@drawable/folder" />
+        <ImageView
+            android:id="@+id/favorite"
+            style="@style/button_style"
+            android:contentDescription="@string/favorites"
+            android:src="@drawable/folder"
+            app:layout_constraintBottom_toBottomOf="@+id/buy"
+            app:layout_constraintEnd_toStartOf="@+id/play"
+            app:layout_constraintStart_toEndOf="@+id/buy"
+            app:layout_constraintTop_toTopOf="@+id/buy" />
 
-            <ImageView
-                android:id="@+id/play"
-                style="@style/button_style"
-                android:contentDescription="@string/playlist"
-                android:src="@drawable/play" />
-
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/play"
+            style="@style/button_style"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:contentDescription="@string/playlist"
+            android:src="@drawable/play"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/one_dp"
-            android:background="@color/green_line" />
+            android:layout_height="1px"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/green_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favorite" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_song"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/view">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

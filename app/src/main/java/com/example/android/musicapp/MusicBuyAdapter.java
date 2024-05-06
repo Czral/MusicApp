@@ -34,15 +34,12 @@ public class MusicBuyAdapter extends RecyclerView.Adapter<MusicBuyAdapter.MusicB
 
             textView = view.findViewById(R.id.site);
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            view.setOnClickListener(v -> {
 
-                    MusicBuy link = musicBuys.get(getAbsoluteAdapterPosition());
-                    Intent openLink = new Intent(Intent.ACTION_VIEW);
-                    openLink.setData(Uri.parse(link.getMusicLink()));
-                    view.getContext().startActivity(openLink);
-                }
+                MusicBuy link = musicBuys.get(getAbsoluteAdapterPosition());
+                Intent openLink = new Intent(Intent.ACTION_VIEW);
+                openLink.setData(Uri.parse(link.getMusicLink()));
+                view.getContext().startActivity(openLink);
             });
         }
 

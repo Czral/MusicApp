@@ -12,9 +12,6 @@
     <style name="button_style">
         <item name="android:layout_width">@dimen/forty_dp</item>
         <item name="android:layout_height">@dimen/forty_dp</item>
-        <item name="android:padding">@dimen/six_dp</item>
-        <item name="android:layout_margin">@dimen/four_dp</item>
-        <item name="android:layout_weight">1</item>
     </style>
 
 
